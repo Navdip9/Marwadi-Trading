@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwadi Trading - Premium Products Supplier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a8e6a3;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section with Slider */
+        .hero {
+            position: relative;
+            height: 100vh;
+            margin-top: 70px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(rgba(45, 80, 22, 0.8), rgba(74, 124, 89, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8f0" width="1200" height="600"/><circle fill="%23e8f5e8" cx="200" cy="150" r="100"/><circle fill="%23d4edda" cx="800" cy="200" r="80"/><circle fill="%23c3e6c3" cx="1000" cy="400" r="120"/><path fill="%23a8e6a3" d="M0,400 Q300,300 600,350 T1200,300 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(rgba(74, 124, 89, 0.8), rgba(45, 80, 22, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f5e8" width="1200" height="600"/><circle fill="%23d4edda" cx="300" cy="100" r="120"/><circle fill="%23c3e6c3" cx="900" cy="150" r="100"/><circle fill="%23a8e6a3" cx="600" cy="350" r="80"/><path fill="%23f0f8f0" d="M0,500 Q400,400 800,450 T1200,400 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(74, 124, 89, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8f0" width="1200" height="600"/><circle fill="%23e8f5e8" cx="400" cy="200" r="90"/><circle fill="%23d4edda" cx="700" cy="100" r="110"/><circle fill="%23c3e6c3" cx="1000" cy="300" r="70"/><path fill="%23a8e6a3" d="M0,450 Q500,350 1000,400 T1200,350 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide:nth-child(4) {
+            background: linear-gradient(rgba(74, 124, 89, 0.8), rgba(45, 80, 22, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f5e8" width="1200" height="600"/><circle fill="%23d4edda" cx="150" cy="250" r="80"/><circle fill="%23c3e6c3" cx="600" cy="150" r="100"/><circle fill="%23a8e6a3" cx="950" cy="200" r="90"/><path fill="%23f0f8f0" d="M0,300 Q400,200 800,250 T1200,200 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide:nth-child(5) {
+            background: linear-gradient(rgba(45, 80, 22, 0.8), rgba(74, 124, 89, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8f0" width="1200" height="600"/><circle fill="%23e8f5e8" cx="250" cy="180" r="70"/><circle fill="%23d4edda" cx="750" cy="120" r="85"/><circle fill="%23c3e6c3" cx="500" cy="350" r="95"/><path fill="%23a8e6a3" d="M0,400 Q300,300 700,350 T1200,300 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide:nth-child(6) {
+            background: linear-gradient(rgba(74, 124, 89, 0.7), rgba(45, 80, 22, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8f5e8" width="1200" height="600"/><circle fill="%23d4edda" cx="350" cy="140" r="75"/><circle fill="%23c3e6c3" cx="850" cy="180" r="65"/><circle fill="%23a8e6a3" cx="600" cy="280" r="80"/><path fill="%23f0f8f0" d="M0,350 Q500,250 1000,300 T1200,250 L1200,600 L0,600 Z"/></svg>');
+        }
+
+        .slide .hero-content {
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #2d5016;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .slider-btn.prev {
+            left: 2rem;
+        }
+
+        .slider-btn.next {
+            right: 2rem;
+        }
+
+        /* Slider Indicators */
+        .slider-indicators {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #2d5016;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5016, #4a7c59);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fffe;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+
+        .about-image {
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Products Section */
+        .products {
+            background: white;
+        }
+
+        .product-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: #2d5016;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #2d5016, #4a7c59);
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: #f8fffe;
+            border-radius: 15px;
+            border-left: 4px solid #4a7c59;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateX(10px);
+            background: #f0f8f0;
+        }
+
+        .product-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .product-item span {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2d5016;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: #f8fffe;
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid #2d5016;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4a7c59, #2d5016);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .contact-form {
+            background: #f8fffe;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2d5016;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a7c59;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2d5016, #4a7c59);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2d5016, #4a7c59);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2d5016, #4a7c59);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            color: white;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .loading-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .loading-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .loading-bar-container {
+            width: 300px;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #fff, #a8e6a3, #fff);
+            border-radius: 3px;
+            width: 0%;
+            animation: slideBar 3s ease-in-out;
+            position: relative;
+        }
+
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 1.5s infinite;
+        }
+
+        .loading-percentage {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dot:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes slideBar {
+            0% { width: 0%; }
+            25% { width: 30%; }
+            50% { width: 60%; }
+            75% { width: 85%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% { 
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% { 
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h2 class="loading-title">Marwadi Trading</h2>
+            <p class="loading-subtitle">Loading premium products...</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-percentage" id="loadingPercentage">0%</div>
+            <div class="loading-dots">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i> Marwadi Trading
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Premium Products Supplier</h1>
+                        <p>Connecting Quality with Trust</p>
+                        <a href="#contact" class="cta-button">Get Quote Today</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Fresh Spices & Herbs</h1>
+                        <p>Farm Fresh, Quality Assured</p>
+                        <a href="#products" class="cta-button">View Products</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Trusted Trading Partner</h1>
+                        <p>Your Success is Our Commitment</p>
+                        <a href="#about" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Quality Excellence</h1>
+                        <p>Where Standards Meet Satisfaction</p>
+                        <a href="#why-choose" class="cta-button">Why Choose Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Reliable Supply Chain</h1>
+                        <p>Delivering Excellence, Every Time</p>
+                        <a href="#contact" class="cta-button">Partner With Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide">
+                <div class="container">
+                    <div class="hero-content fade-in">
+                        <h1>Business Growth Partner</h1>
+                        <p>Empowering Your Success Story</p>
+                        <a href="#contact" class="cta-button">Start Partnership</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Navigation -->
+        <div class="slider-nav">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Slider Indicators -->
+        <div class="slider-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+            <span class="indicator" onclick="currentSlide(4)"></span>
+            <span class="indicator" onclick="currentSlide(5)"></span>
+            <span class="indicator" onclick="currentSlide(6)"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Marwadi Trading</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Your Trusted Trading Partner</h3>
+                    <p>Marwadi Trading is a Rajkot-based trading company engaged in the supply of premium products including Dry Curry Leaves, Mint Leaves, Tomato, Ginger, Garlic, Green Chilli, and other fresh commodities.</p>
+                    <p>We bridge the gap between local farmers and wholesale buyers, ensuring that quality products reach the market at competitive prices while maintaining the highest standards of freshness and authenticity.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <div>
+                        <i class="fas fa-seedling" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                        <h3>Fresh from Farm</h3>
+                        <p>Direct sourcing from local farmers ensures the freshest products reach your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Products</h2>
+            
+            <!-- Dry Products Section -->
+            <div class="product-category fade-in">
+                <h3 class="category-title">🥘 Dry Spices & Herbs</h3>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Dry Curry Leaves</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Dry Mint Leaves</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-pepper-hot"></i>
+                        <span>Dry Red Chilli</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Ginger</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Garlic</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Turmeric</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Coriander</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Cumin</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Mustard Seeds</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Fenugreek</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Bay Leaves</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Basil</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Oregano</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Thyme</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Dry Rosemary</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fresh Products Section -->
+            <div class="product-category fade-in">
+                <h3 class="category-title">🥬 Fresh Products</h3>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Fresh Mint Leaves</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-pepper-hot"></i>
+                        <span>Fresh Green Chilli</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Fresh Ginger</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Fresh Garlic</span>
+                    </div>
+                    <div class="product-item">
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Fresh Tomato</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Marwadi Trading?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>We source only the finest quality products directly from trusted local farmers, ensuring freshness and authenticity in every batch.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Our direct farm-to-market approach eliminates middlemen, offering you the best prices without compromising on quality.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>We understand the importance of timely delivery in the food industry. Our logistics network ensures prompt and reliable delivery.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Your satisfaction is our priority. We provide personalized service and support to meet your specific requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Shivam Nagar Soci, Rev. Survey No. 134, Plot No. 22, Nr. Hargange Way Bridge, Marketing Yard Road, Rajkot-360003, Gujarat</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 99257 50555</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <h4>GSTIN</h4>
+                            <p>24AHIPT2101L1ZF</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Request a Quote</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product of Interest</label>
+                            <select id="product" name="product" style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                                <option value="">Select a product</option>
+                                <option value="dry-curry-leaves">Dry Curry Leaves</option>
+                                <option value="dry-mint-leaves">Dry Mint Leaves</option>
+                                <option value="dry-red-chilli">Dry Red Chilli</option>
+                                <option value="dry-ginger">Dry Ginger</option>
+                                <option value="dry-garlic">Dry Garlic</option>
+                                <option value="dry-turmeric">Dry Turmeric</option>
+                                <option value="dry-coriander">Dry Coriander</option>
+                                <option value="dry-cumin">Dry Cumin</option>
+                                <option value="dry-mustard-seeds">Dry Mustard Seeds</option>
+                                <option value="dry-fenugreek">Dry Fenugreek</option>
+                                <option value="dry-bay-leaves">Dry Bay Leaves</option>
+                                <option value="dry-basil">Dry Basil</option>
+                                <option value="dry-oregano">Dry Oregano</option>
+                                <option value="dry-thyme">Dry Thyme</option>
+                                <option value="dry-rosemary">Dry Rosemary</option>
+                                <option value="fresh-mint-leaves">Fresh Mint Leaves</option>
+                                <option value="fresh-green-chilli">Fresh Green Chilli</option>
+                                <option value="fresh-ginger">Fresh Ginger</option>
+                                <option value="fresh-garlic">Fresh Garlic</option>
+                                <option value="fresh-tomato">Fresh Tomato</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity (kg)</label>
+                            <input type="number" id="quantity" name="quantity" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Requirements</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i> Marwadi Trading
+                </div>
+            </div>
+            <p>Marwadi Trading</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen with Progress Bar
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const loadingPercentage = document.getElementById('loadingPercentage');
+            const loadingBar = document.querySelector('.loading-bar');
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                loadingPercentage.textContent = Math.round(progress) + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 500);
+                }
+            }, 100);
+        });
+
+        // Slider functionality
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to current slide and indicator
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            currentSlideIndex = index;
+        }
+
+        function nextSlide() {
+            const nextIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
+        }
+
+        function changeSlide(direction) {
+            if (direction === 1) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+
+        function currentSlide(index) {
+            showSlide(index - 1);
+        }
+
+        // Auto-slide functionality
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Create WhatsApp message
+            const message = `New Quote Request from Marwadi Trading Website:
+            
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Product: ${data.product}
+Quantity: ${data.quantity} kg
+Message: ${data.message}
+
+Please contact me for further details.`;
+            
+            // Encode message for WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/919925750555?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            alert('Thank you for your inquiry! We will contact you soon via WhatsApp.');
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.product-card, .feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(45, 80, 22, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2d5016 0%, #4a7c59 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
